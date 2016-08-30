@@ -1,0 +1,52 @@
+<script type="text/javascript">
+window.onload=function(){
+	var inputName=document.getElementsByTagName("input");
+	var input1=inputName[0];
+	var input2=inputName[1];
+	var input3=inputName[2];
+	var Li2=document.getElementById("l2");
+	var Li4=document.getElementById("l3");
+	var Li6=document.getElementById("l4");
+	input1.onfocus=function(){
+	Li2.innerHTML="!支持数字`字母`文字` “-” “_”的组合，4-20个字符";
+	Li2.style.fontSize="12px";
+	Li2.style.color="#C5C5C5";
+	input1.placeholder="";
+	}
+	input1.onblur=function(){
+	var xiaoZheng=/^[a-zA-Z0-9_\u4e00-\u9fa5\-]{4,20}$/;
+	if(!input1.value.match(xiaoZheng)){
+		Li2.style.fontSize="12px";
+		Li2.style.color="#EE2222";
+		Li2.innerHTML="!含有非法字符或者长度不符。";
+		}else {
+		Li2.innerHTML="&nbsp;"
+		}
+		}
+		
+	input2.onfocus=function(){
+	Li4.innerHTML="-!-字母`数字`符号俩种组合的组合，4-20个字符";
+	Li4.style.fontSize="12px";
+	Li4.style.color="#C5C5C5";
+	input2.placeholder="";
+	}
+	input2.onblur=function(){
+	var xiaoZheng="^[A-Za-z0-9]+$";
+	if(!input2.value.match(xiaoZheng)){
+		Li4.style.fontSize="12px";
+		Li4.style.color="#EE2222";
+		Li4.innerHTML="-!-含有非法字符或者长度不符。";
+		}else {
+		Li4.innerHTML="&nbsp;"
+		}
+		}
+		input3.onblur=function(){
+			if(input3.value!=input2.value){
+				Li6.innerHTML="-!-两次密码输入不一致。";
+				Li6.style.fontSize="12px";
+				Li6.style.color="#EE2222";
+				}
+			}
+	}
+</script>
+

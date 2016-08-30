@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>主页</title>
+</head>
+<body>
+	<div id='div'></div>
+</body>
+<script src='./js/jquery.js'></script>
+<script>
+	$.get("./page/index.html","123",function(data){
+			$("#div").html(data);
+		}
+	);
+</script>
+</html>
